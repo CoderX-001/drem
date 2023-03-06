@@ -3,10 +3,10 @@ export const checkEmail = async (email, submitURL) => {
 
   const fetchRes = await fetch(`${submitURL}?email=${email.value}`)
 
-  if (!fetchRes) return false
+  if (!fetchRes.ok) return false
 
   const response = await fetchRes.json()
-  if (!response.ok) return false
+  if (!response) return false
   
   const data = await response.message
 
