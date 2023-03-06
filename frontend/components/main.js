@@ -84,7 +84,42 @@ const loginFormHandler = async (values, spinner) => {
       }
 
       const data = await createUserSubmit(url, body)
-      if (!data) return console.error('Something went wrong!')
+      if (!data) {
+        const errorDiv = document.createElement('div')
+        const errorMsg = document.createElement('span')
+        const errorCancel = document.createElement('i')
+
+        errorCancel.setAttribute('class', 'fa fa-times close')
+        errorMsg.innerHTML = 'Something went wrong. Try again'
+        errorDiv.setAttribute('class', 'error px-4 py-2 mb-3 rounded bg-red-400')
+        errorDiv.setAttribute('id', n+1)
+
+        if (errorNumber.indexOf(errorDiv.id) == -1){
+          errorNumber.push(errorDiv.id)
+  
+          errorDiv.appendChild(errorMsg)
+          errorDiv.appendChild(errorCancel)
+  
+          errorContainer.appendChild(errorDiv)
+
+          n++
+        }
+
+        errorCancel.addEventListener('click', () => {
+          errorCancel.parentElement.classList.replace('error', 'hidden')
+          const newList = errorNumber.filter(e => {
+            return e != errorNumber.indexOf(errorCancel.parentElement.id)+1
+          })
+          errorNumber = newList
+        })
+        
+        if (spinner && spinner.classList.contains('fa-spin')) {
+          spinner.classList.replace('inline-block', 'hidden')
+          spinner.classList.remove('fa-spin')
+        }
+        
+        return console.error('Something went wrong!')
+      }
 
       if (data.error) {
         let n = 0
@@ -210,7 +245,42 @@ const signupFormHandler = async (values, spinner) => {
     
     try {
       const emailCheckData = await checkEmail(email, url)
-      if (!emailCheckData) return console.error('Something went wrong!')
+      if (!emailCheckData) {
+        const errorDiv = document.createElement('div')
+        const errorMsg = document.createElement('span')
+        const errorCancel = document.createElement('i')
+
+        errorCancel.setAttribute('class', 'fa fa-times close')
+        errorMsg.innerHTML = 'Something went wrong. Try again'
+        errorDiv.setAttribute('class', 'error px-4 py-2 mb-3 rounded bg-red-400')
+        errorDiv.setAttribute('id', n+1)
+
+        if (errorNumber.indexOf(errorDiv.id) == -1){
+          errorNumber.push(errorDiv.id)
+  
+          errorDiv.appendChild(errorMsg)
+          errorDiv.appendChild(errorCancel)
+  
+          errorContainer.appendChild(errorDiv)
+
+          n++
+        }
+
+        errorCancel.addEventListener('click', () => {
+          errorCancel.parentElement.classList.replace('error', 'hidden')
+          const newList = errorNumber.filter(e => {
+            return e != errorNumber.indexOf(errorCancel.parentElement.id)+1
+          })
+          errorNumber = newList
+        })
+        
+        if (spinner && spinner.classList.contains('fa-spin')) {
+          spinner.classList.replace('inline-block', 'hidden')
+          spinner.classList.remove('fa-spin')
+        }
+        
+        return console.error('Something went wrong!')
+      }
 
       if (emailCheckData === foundUser) {
         if (spinner && spinner.classList.contains('fa-spin')) {
@@ -258,7 +328,42 @@ const signupFormHandler = async (values, spinner) => {
         }
 
         const data = await createUserSubmit(url, body)
-        if (!data) return console.error('Something went wrong!')
+        if (!data) {
+        const errorDiv = document.createElement('div')
+        const errorMsg = document.createElement('span')
+        const errorCancel = document.createElement('i')
+
+        errorCancel.setAttribute('class', 'fa fa-times close')
+        errorMsg.innerHTML = 'Something went wrong. Try again'
+        errorDiv.setAttribute('class', 'error px-4 py-2 mb-3 rounded bg-red-400')
+        errorDiv.setAttribute('id', n+1)
+
+        if (errorNumber.indexOf(errorDiv.id) == -1){
+          errorNumber.push(errorDiv.id)
+  
+          errorDiv.appendChild(errorMsg)
+          errorDiv.appendChild(errorCancel)
+  
+          errorContainer.appendChild(errorDiv)
+
+          n++
+        }
+
+        errorCancel.addEventListener('click', () => {
+          errorCancel.parentElement.classList.replace('error', 'hidden')
+          const newList = errorNumber.filter(e => {
+            return e != errorNumber.indexOf(errorCancel.parentElement.id)+1
+          })
+          errorNumber = newList
+        })
+        
+        if (spinner && spinner.classList.contains('fa-spin')) {
+          spinner.classList.replace('inline-block', 'hidden')
+          spinner.classList.remove('fa-spin')
+        }
+        
+        return console.error('Something went wrong!')
+      }
 
         localStorage.setItem('accessToken', `Bearer ${data.accessToken}`)
         localStorage.setItem('refreshToken', `Bearer ${data.refreshToken}`)
