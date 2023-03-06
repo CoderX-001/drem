@@ -320,7 +320,7 @@ const signupFormHandler = async (values, spinner) => {
           spinner.classList.add('fa-spin')
         }
 
-        const url = 'http://localhost:5000/api/v1/main/auth/register'
+        const url = 'https://api-drem.onrender.com/api/v1/main/auth/register'
         const body = {
           name: name.value,
           email: email.value,
