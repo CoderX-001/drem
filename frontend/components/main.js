@@ -77,7 +77,7 @@ const loginFormHandler = async (values, spinner) => {
     }
     
     try {
-      const url = 'http://localhost:5000/api/v1/main/auth/login'
+      const url = 'https://api-drem.onrender.com/api/v1/main/auth/login'
       const body = {
         email: email.value,
         password: password.value
@@ -203,7 +203,7 @@ const signupFormHandler = async (values, spinner) => {
       spinner.classList.replace('hidden', 'inline-block')
       spinner.classList.add('fa-spin')
     }
-    const url = 'http://localhost:5000/api/v1/main/check/email'
+    const url = 'https://api-drem.onrender.com/api/v1/main/check/email'
 
     const foundUser = 'A user with the provided email already exists'
     const notFoundUser = 'User does not exist'
