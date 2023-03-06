@@ -1,0 +1,179 @@
+@font-face {
+  font-family: "Edu VIC";
+  src: url(../fonts/Edu_VIC_WA_NT_Beginner/static/EduVICWANTBeginner-Medium.ttf);
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url(../fonts/Open_Sans/static/OpenSans/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: "Open Sans 500";
+  src: url(../fonts/Open_Sans/static/OpenSans/OpenSans-Medium.ttf);
+}
+@font-face {
+  font-family: "Satisfy";
+  src: url(../fonts/Satisfy/Satisfy-Regular.ttf);
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url(../fonts/Ubuntu/Ubuntu-Regular.ttf);
+}
+@font-face {
+  font-family: "Ubuntu 500";
+  src: url(../fonts/Ubuntu/Ubuntu-Medium.ttf);
+}
+@font-face{
+  font-family: "Poppins";
+  src: url(../fonts/Poppins/Poppins-Regular.ttf);
+}
+@font-face{
+  font-family: "Poppins 500";
+  src: url(../fonts/Poppins/Poppins-Medium.ttf);
+}
+@font-face{
+  font-family: "Oswald";
+  src: url(../fonts/Oswald/static/Oswald-Regular.ttf);
+}
+@font-face{
+  font-family: "Oswald 500";
+  src: url(../fonts/Oswald/static/Oswald-Medium.ttf);
+}
+@font-face{
+  font-family: "Roboto";
+  src: url(../fonts/Roboto/Roboto-Regular.ttf);
+}
+@font-face{
+  font-family: "Roboto 500";
+  src: url(../fonts/Roboto/Roboto-Medium.ttf);
+}
+@font-face{
+  font-family: "Source Sans Pro";
+  src: url(../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf);
+}
+
+
+*{
+  font-family:"Poppins", sans-serif;
+}
+
+.font-Edu{font-family:"Edu VIC", sans-serif;}
+.font-Sans{font-family:"Open Sans", sans-serif;}
+.font-Sans-500{font-family:"Open Sans 500", sans-serif;}
+.font-satisfy{font-family:"Satisfy", sans-serif;}
+.font-Ubuntu{font-family:"Ubuntu", sans-serif;}
+.font-Ubuntu-500{font-family:"Ubuntu 500", sans-serif;}
+.font-source-pro{font-family:"Source Sans Pro", sans-serif;}
+.font-roboto{font-family:"Roboto", sans-serif;}
+.font-roboto-500{font-family:"Roboto 500", sans-serif;}
+.font-poppins{font-family:"Poppins", sans-serif;}
+.font-poppins-500{font-family:"Poppins 500", sans-serif;}
+.font-oswald{font-family:"Oswald", sans-serif;}
+.font-oswald-500{font-family:"Oswald 500", sans-serif;}
+
+.list{
+  background-color:#f54258;
+  color:#fff;
+  font-size:.8rem;
+  display:inline-block;
+  width:23px;
+  height:23px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+}
+.options{position:relative;cursor:pointer;}
+.options.active{
+  color:#f54258;
+}
+.guide{
+  height:2px;
+  background-color:#f54258;
+  position:absolute;
+  left:8.4rem;
+  margin-top:-7px;
+  transition:all .3s ease;
+}
+.codebase::-webkit-scrollbar{
+  display:none;
+}
+.platform-type{
+  cursor:pointer;
+  font-size:.75rem;
+  transition:all .3s ease;
+}
+.platform-type:not(.active):hover{
+  background-color:#6c63ff;
+  padding:.1rem .8rem;
+  border-radius:3px;
+}
+.platform-type.active{
+  background-color:#6c63ff;
+  color:#17181d;
+  font-family:"Poppins 500";
+  padding:.1rem .8rem;
+  border-radius:3px;
+}
+
+.js-rw{color:#f54258;}
+.js-var{color:#6c9fe0;}
+.js-str{color:#fcd9b8}
+.js-comm{color:#aaa}
+
+form > div::-webkit-scrollbar {display:none}
+.form-field+label{
+  position:absolute;
+  top:50%;
+  pointer-events:none;
+  transform:translateY(-50%);
+  transition:all .3s ease;
+}
+.form-field{
+  width:100%;
+  height:25px;
+  padding:0 1rem;
+  margin-top:1rem;
+  font-size:.8rem;
+  outline:none;
+  background-color:transparent;
+  cursor:default;
+}
+.form-field[type=password]{
+  font-family:Verdana;
+  font-size:1.15em;
+}
+.form-field:focus{cursor:text}
+.form-field:focus+label,
+.form-field+label.active{
+  color:#6c63ff;
+  top:.8rem;
+  font-size:.75rem;
+}
+.errors > .error {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-size:.9rem;
+  color:#17181d;
+}
+.errors > .error > i{cursor:pointer;}
+
+@media screen and (min-width:581px) and (max-width:767px){
+  footer{
+    padding:0 6rem;
+  }
+}
+
+/* 
+
+#004dc3
+#6c9fe0
+#f54258
+
+
+#17181D
+#292C35
+#E09145
+#FCD9B8
+
+*/
