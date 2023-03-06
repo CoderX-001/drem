@@ -1,74 +1,10 @@
-@font-face {
-  font-family: "Edu VIC";
-  src: url(../fonts/Edu_VIC_WA_NT_Beginner/static/EduVICWANTBeginner-Medium.ttf);
-}
-@font-face {
-  font-family: "Open Sans";
-  src: url(../fonts/Open_Sans/static/OpenSans/OpenSans-Regular.ttf);
-}
-@font-face {
-  font-family: "Open Sans 500";
-  src: url(../fonts/Open_Sans/static/OpenSans/OpenSans-Medium.ttf);
-}
-@font-face {
-  font-family: "Satisfy";
-  src: url(../fonts/Satisfy/Satisfy-Regular.ttf);
-}
-@font-face {
-  font-family: "Ubuntu";
-  src: url(../fonts/Ubuntu/Ubuntu-Regular.ttf);
-}
-@font-face {
-  font-family: "Ubuntu 500";
-  src: url(../fonts/Ubuntu/Ubuntu-Medium.ttf);
-}
-@font-face{
-  font-family: "Poppins";
-  src: url(../fonts/Poppins/Poppins-Regular.ttf);
-}
-@font-face{
-  font-family: "Poppins 500";
-  src: url(../fonts/Poppins/Poppins-Medium.ttf);
-}
-@font-face{
-  font-family: "Oswald";
-  src: url(../fonts/Oswald/static/Oswald-Regular.ttf);
-}
-@font-face{
-  font-family: "Oswald 500";
-  src: url(../fonts/Oswald/static/Oswald-Medium.ttf);
-}
-@font-face{
-  font-family: "Roboto";
-  src: url(../fonts/Roboto/Roboto-Regular.ttf);
-}
-@font-face{
-  font-family: "Roboto 500";
-  src: url(../fonts/Roboto/Roboto-Medium.ttf);
-}
-@font-face{
-  font-family: "Source Sans Pro";
-  src: url(../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf);
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
 
 *{
   font-family:"Poppins", sans-serif;
 }
 
-.font-Edu{font-family:"Edu VIC", sans-serif;}
-.font-Sans{font-family:"Open Sans", sans-serif;}
-.font-Sans-500{font-family:"Open Sans 500", sans-serif;}
-.font-satisfy{font-family:"Satisfy", sans-serif;}
-.font-Ubuntu{font-family:"Ubuntu", sans-serif;}
-.font-Ubuntu-500{font-family:"Ubuntu 500", sans-serif;}
-.font-source-pro{font-family:"Source Sans Pro", sans-serif;}
-.font-roboto{font-family:"Roboto", sans-serif;}
-.font-roboto-500{font-family:"Roboto 500", sans-serif;}
 .font-poppins{font-family:"Poppins", sans-serif;}
-.font-poppins-500{font-family:"Poppins 500", sans-serif;}
-.font-oswald{font-family:"Oswald", sans-serif;}
-.font-oswald-500{font-family:"Oswald 500", sans-serif;}
 
 .list{
   background-color:#f54258;
