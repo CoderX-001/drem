@@ -92,7 +92,7 @@ const loginFormHandler = async (values, spinner) => {
         errorCancel.setAttribute('class', 'fa fa-times close')
         errorMsg.innerHTML = 'Something went wrong. Try again'
         errorDiv.setAttribute('class', 'error px-4 py-2 mb-3 rounded bg-red-400')
-        errorDiv.setAttribute('id', n+1)
+        errorDiv.setAttribute('id', '1')
 
         if (errorNumber.indexOf(errorDiv.id) == -1){
           errorNumber.push(errorDiv.id)
@@ -101,8 +101,6 @@ const loginFormHandler = async (values, spinner) => {
           errorDiv.appendChild(errorCancel)
   
           errorContainer.appendChild(errorDiv)
-
-          n++
         }
 
         errorCancel.addEventListener('click', () => {
@@ -253,7 +251,7 @@ const signupFormHandler = async (values, spinner) => {
         errorCancel.setAttribute('class', 'fa fa-times close')
         errorMsg.innerHTML = 'Something went wrong. Try again'
         errorDiv.setAttribute('class', 'error px-4 py-2 mb-3 rounded bg-red-400')
-        errorDiv.setAttribute('id', n+1)
+        errorDiv.setAttribute('id', '1')
 
         if (errorNumber.indexOf(errorDiv.id) == -1){
           errorNumber.push(errorDiv.id)
@@ -262,8 +260,6 @@ const signupFormHandler = async (values, spinner) => {
           errorDiv.appendChild(errorCancel)
   
           errorContainer.appendChild(errorDiv)
-
-          n++
         }
 
         errorCancel.addEventListener('click', () => {
@@ -336,7 +332,7 @@ const signupFormHandler = async (values, spinner) => {
         errorCancel.setAttribute('class', 'fa fa-times close')
         errorMsg.innerHTML = 'Something went wrong. Try again'
         errorDiv.setAttribute('class', 'error px-4 py-2 mb-3 rounded bg-red-400')
-        errorDiv.setAttribute('id', n+1)
+        errorDiv.setAttribute('id', '1')
 
         if (errorNumber.indexOf(errorDiv.id) == -1){
           errorNumber.push(errorDiv.id)
@@ -345,8 +341,6 @@ const signupFormHandler = async (values, spinner) => {
           errorDiv.appendChild(errorCancel)
   
           errorContainer.appendChild(errorDiv)
-
-          n++
         }
 
         errorCancel.addEventListener('click', () => {
