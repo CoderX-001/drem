@@ -37,15 +37,15 @@
         <!-- Navbar for larger screen -->
         <div class="nav-link hidden flex-col w-full items-center absolute top-[4.5rem] left-0 px-16 py-8 bg-[#f54258] lg:flex lg:static lg:flex-row lg:p-0 lg:bg-transparent">
           <div class="w-full flex flex-col text-[.9rem] text-white lg:space-x-[1.5rem] lg:inline-block lg:text-gray-400">
-            <a href="./pages/login.html" class="mb-6 lg:mb-0 hover:text-[#17181D]">Features</a>
-            <a href="./pages/login.html" class="mb-6 lg:mb-0 hover:text-[#17181D]">Docs</a>
-            <a href="./pages/login.html" class="mb-6 lg:mb-0 hover:text-[#17181D]">Pricing</a>
+            <a href="./pages/login" class="mb-6 lg:mb-0 hover:text-[#17181D]">Features</a>
+            <a href="./pages/login" class="mb-6 lg:mb-0 hover:text-[#17181D]">Docs</a>
+            <a href="./pages/login" class="mb-6 lg:mb-0 hover:text-[#17181D]">Pricing</a>
           </div>
           
           <!-- Buttons -->
           <div class="w-full flex flex-col text-[.9rem] text-white lg:flex-row lg:items-center lg:justify-end lg:space-x-[1.5rem]">
-            <a href="./pages/login.html" class="mb-6 lg:mb-0 lg:text-gray-400 hover:text-[#17181D]">Log in</a>
-            <a href="./pages/signup.html" class="hover:text-[#17181D] lg:bg-[#f54258] lg:py-2 lg:px-3 lg:rounded lg:shadow lg:hover:bg-[#f54258aa] lg:hover:text-white lg:transition lg:duration-200">Get started</a>
+            <a href="./pages/login" class="mb-6 lg:mb-0 lg:text-gray-400 hover:text-[#17181D]">Log in</a>
+            <a href="./pages/signup" class="hover:text-[#17181D] lg:bg-[#f54258] lg:py-2 lg:px-3 lg:rounded lg:shadow lg:hover:bg-[#f54258aa] lg:hover:text-white lg:transition lg:duration-200">Get started</a>
           </div>
         </div>
       </nav>
@@ -193,7 +193,7 @@
 
   <script type="module">
     import { isAuthenticated } from './components/moduleMisc.js'
-    const redirectTo = '../pages/login.html'
+    const redirectTo = '../pages/login'
 
     isAuthenticated(redirectTo)
   </script>
