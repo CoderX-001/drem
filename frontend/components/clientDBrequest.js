@@ -44,9 +44,34 @@ export const loginUserSubmit = async (submitURL, data) => {
     }
   )
 
-  if (!loginUser.ok) throw new Error('Something went wrong!')
+  if (!loginUser.ok) return false
 
   const response = await loginUser.json()
 
+  return response
+}
+
+export const getUserData = async (url) => {
+  const userId = localStorage.getItem('userId')
+  const accessToken = localStorage.getItem('accessToken')
+  
+  const data = await fetch(
+    url,
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        id: userId
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        'authorization': 'Bearer accessToken'
+      }
+    }
+  )
+  
+  if (!data.ok) return false
+  
+  const response = await data.json()
+  
   return response
 }
