@@ -7,7 +7,6 @@ const conn = (url) => {
     maxPoolSize: 50,
     connectTimeoutMS: 2500,
     useNewUrlParser: true,
-    useCreateIndex: true,
     useUnifiedTopology: true,
     dbName: 'dremAPI'
   }, (err, success) => {
