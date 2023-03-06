@@ -25,7 +25,7 @@ export const createUserSubmit = async (submitURL, data) => {
     }
   )
 
-  if (!createUser) throw new Error('Something went wrong!')
+  if (!createUser.ok) return false
 
   const response = await createUser.json()
 
