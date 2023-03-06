@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login | Drem</title>
+
+  <link rel="stylesheet" href="../public/css/fontawesome.css">
+  <link rel="stylesheet" href="../public/css/brands.css">
+  <link rel="stylesheet" href="../public/css/solid.css">
+  <link rel="stylesheet" href="../public/css/default.css">
+  <link rel="stylesheet" href="../public/css/styles.css">
+  <link rel="stylesheet" href="../public/css/my-style.css">
+</head>
+<body>
+  <!-- Main body container -->
+  <div class="w-full">
+    <header class="w-full sticky z-50 top-0 bg-white px-12 lg:px-16 py-5 shadow flex items-center">
+      <nav class="w-full container mx-auto flex items-center gap-x-[4rem]">
+        <!-- Logo -->
+        <div class="flex flex-shrink-0 font-mono text-2xl font-semibold text-[#6c63ff]">
+          <a href="/">
+            <h1>drem</h1>
+          </a>
+        </div>
+
+        <!-- Hamburger for smaller screen -->
+        <div class="block lg:hidden absolute right-[3rem]">
+          <button class="submenu flex items-center px-2 py-1 border border-gray-500 rounded hover:border-[#f54258] hover:text-[#f54258] hover:fill-current">
+            <svg class="h-5 w-5" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+            </svg>
+          </button>
+        </div>
+  
+        <!-- Navbar for larger screen -->
+        <div class="nav-link hidden flex-col w-full items-center absolute top-[4.5rem] left-0 px-16 py-8 bg-[#f54258] lg:flex lg:static lg:flex-row lg:p-0 lg:bg-transparent">
+          <div class="w-full flex flex-col text-[.9rem] text-white lg:space-x-[1.5rem] lg:inline-block lg:text-gray-400">
+            <a href="./login.html" class="mb-6 lg:mb-0 hover:text-[#17181D]">Features</a>
+            <a href="./login.html" class="mb-6 lg:mb-0 hover:text-[#17181D]">Docs</a>
+            <a href="./login.html" class="mb-6 lg:mb-0 hover:text-[#17181D]">Pricing</a>
+          </div>
+          
+          <!-- Buttons -->
+          <div class="w-full text-[.9rem] text-white lg:flex lg:flex-row lg:items-center lg:justify-end lg:space-x-[1.5rem]">
+            <a href="" class="mb-6 lg:mb-0 lg:text-gray-400 hover:text-[#17181D]"><i class="fa fa-question-circle hidden lg:inline-block">&nbsp;</i>Learn more</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container mx-auto mt-0 px-8 py-6 lg:px-16">
+      <div class="w-full shadow rounded-xl overflow-auto min-h-[33rem] py-6 lg:h-[33rem] lg:flex lg:p-0">
+        <form action="" id="login" class="w-full h-full items-center lg:w-1/2 lg:flex">
+          <div class="w-full h-full flex flex-col items-center overflow-auto py-12 lg:h-[31rem] lg:justify-center">
+            <h1 class="text-2xl text-[#6c63ff] mb-6 lg:hidden">Welcome back</h1>
+            <div class="errors w-9/12">
+              <!-- <div class="error px-4 py-2 mb-5 rounded bg-red-400">
+                <span>Email already exists</span>
+                <i class="fa fa-times close"></i>
+              </div> -->
+            </div>
+            <div class="w-9/12">
+              <div class="relative w-full px-3 py-2 rounded shadow mb-5">
+                <input type="email" name="email" id="email" class="form-field">
+                <label class="text-[.9rem] left-[1.3rem] md:left-[2rem]" for="email"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Email</label>
+              </div>
+              <div class="relative w-full px-3 py-2 rounded shadow mb-5">
+                <input type="password" name="password" id="password" class="form-field">
+                <label class="text-[.9rem] left-[1.3rem] md:left-[2rem]" for="password"><i class="fa fa-key"></i>&nbsp;&nbsp;Password</label>
+              </div>
+            </div>
+            <button type="submit" class="bg-[#17181D] text-[#6c63ff] rounded shadow mt-3 py-3 px-8 text-[.9rem] hover:bg-[#f54258] hover:text-[#17181D] transition lg:px-12"><i class="fa fa-spinner btn-loader hidden"></i>&nbsp;&nbsp;Log in</button>
+            <div class="lg:hidden">
+              <p class="text-[.9rem] mt-4">Don't have an account? Click <a href="./signup.html" class="text-[#6c63ff]">here</a></p>
+            </div>
+          </div>
+        </form>
+        <div class="bg-[#17181D] hidden w-1/2 h-full py-6 items-center flex-col text-white lg:flex">
+          <div class="flex justify-center my-3">
+            <img src="../public/images/undraw_login_re_4vu2.svg" alt="" class="w-1/2">
+          </div>
+          <h1 class="text-2xl text-[#6c63ff] my-6">Welcome back</h1>
+          
+          <p class="text-[.9rem] mt-20">Click <a href="./signup.html" class="text-[#6c63ff]">here</a> if you don't have an account.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../components/navBar.js"></script>
+  <script src="../components/forms.js"></script>
+
+  <script src="../components/main.js" type="module"></script>
+  <script type="module">
+    import { isAuthenticated } from '../components/moduleMisc.js'
+    const redirectTo = '../pages/signup.html'
+
+    // isAuthenticated(redirectTo)
+  </script>
+</body>
+</html>
