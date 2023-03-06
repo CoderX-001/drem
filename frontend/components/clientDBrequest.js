@@ -6,7 +6,7 @@ export const checkEmail = async (email, submitURL) => {
   if (!fetchRes) return false
 
   const response = await fetchRes.json()
-  if (!response) return false
+  if (!response.ok) return false
   
   const data = await response.message
 
@@ -44,7 +44,7 @@ export const loginUserSubmit = async (submitURL, data) => {
     }
   )
 
-  if (!loginUser) throw new Error('Something went wrong!')
+  if (!loginUser.ok) throw new Error('Something went wrong!')
 
   const response = await loginUser.json()
 
