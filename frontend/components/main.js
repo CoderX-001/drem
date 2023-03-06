@@ -161,7 +161,7 @@ const loginFormHandler = async (values, spinner) => {
         localStorage.setItem('refreshToken', `Bearer ${data.refreshToken}`)
         localStorage.setItem('userId', data.userId)
 
-        location.href = '../pages/signup.html'
+        location.href = '../pages/dashboard'
       }
     }
     catch(err) {
@@ -369,7 +369,7 @@ const signupFormHandler = async (values, spinner) => {
         localStorage.setItem('refreshToken', `Bearer ${data.refreshToken}`)
         localStorage.setItem('userId', data.userId)
 
-        location.href = '../pages/login.html'
+        location.href = '../pages/dashboard'
       }
     }
     catch(err) {
