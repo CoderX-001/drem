@@ -14,7 +14,12 @@ export const isAuthenticated = (redirect) => {
     }
   }
   else if (accessToken === null || refreshToken === null || id === null){
-    if (location.href !== "https://drem-g2j0.onrender.com/" || location.href !== "https://drem-g2j0.onrender.com/pages/login" || location.href !== "https://drem-g2j0.onrender.com/pages/signup") {
+    let allowedPages = [
+      "https://drem-g2j0.onrender.com/",
+      "https://drem-g2j0.onrender.com/pages/login",
+      "https://drem-g2j0.onrender.com/pages/signup"
+    ]
+    if (!location.href.includes(allowedPages[0]) || !location.href.includes(allowedPages[1])  || !location.href.includes(allowedPages[2])) {
       return location.href = '/pages/login'
     }
   }
