@@ -30,3 +30,30 @@ export const logout = () => {
 
   return window.location.href = "/"
 }
+
+const getLogin = () => {
+  let access
+  document.cookie.includes('; ') ? access = document.cookie.split('; ')[1] : access = document.cookie
+  
+  let verify = access.split('=')
+  
+  if (verify[1] === 'true'){
+    valid = false
+  }
+  
+  return valid
+}
+
+export const sliderWelcome = (element) => {
+  if (!getLogin()) return false
+  
+  setTimeout(() => {
+    element.classList.add('active')
+  }, 800)
+  
+  element.addEventListener('click', () => {
+    element.classList.remove('active')
+  })
+  
+  document.cookie = "logged_in=true; path=/"
+}
