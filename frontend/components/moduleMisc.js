@@ -16,7 +16,6 @@ export const isAuthenticated = (redirect) => {
     }
   } else if (accessToken === null || refreshToken === null || id === null) {
     const path = localStorage.getItem('pathName')
-    console.log(path)
 
     if (path !== location.pathname) {
       return location.href = '/pages/login'
