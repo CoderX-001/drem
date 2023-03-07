@@ -31,8 +31,9 @@ export const createUserSubmit = async (submitURL, data) => {
     
     return { valid: false, data }
   }
-
-  const response = await createUser.json()
+  else {
+    const response = await createUser.json()
+  }
 
   return response
 }
@@ -49,9 +50,15 @@ export const loginUserSubmit = async (submitURL, data) => {
     }
   )
 
-  if (!loginUser.ok) return false
-
-  const response = await loginUser.json()
+  if (!loginUser.ok) {
+    console.log(loginUser.json())
+    const data = await loginUser.json()
+    
+    return { valid: false, data }
+  }
+  else {
+    const response = await loginUser.json()
+  }
 
   return response
 }
