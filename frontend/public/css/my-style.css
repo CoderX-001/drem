@@ -1,3 +1,7 @@
+/* 
+  #004dc3, #6c9fe0, #f54258, #17181D, #292C35, #E09145, #FCD9B8
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
 
 *{
@@ -93,6 +97,39 @@ form > div::-webkit-scrollbar {display:none}
   color:#17181d;
 }
 .errors > .error > i{cursor:pointer;}
+.welcome-content{
+  z-index:20;
+  width:fit-content;
+  visibility:hidden;
+  border-radius:8px;
+  padding:1.2rem 0;
+  box-shadow: 2px 2px 7px #aaa;
+}
+.welcome-content > p,
+.welcome-content > i{display:none;}
+.welcome-content.right{
+  position:absolute;
+  right:0;
+  transition:all .3s ease;
+}
+.welcome-content.active{
+  visibility:visible;
+  margin-right:1.5rem;
+  padding:1.2rem 10rem 1.2rem 1.6rem;
+}
+.welcome-content.active > p,
+.welcome-content.active > i{display:block;}
+.welcome-content > i{
+  position:absolute;
+  top:.4rem;
+  right:.6rem;
+  padding:.2rem .3rem;
+  cursor:pointer;
+}
+.welcome-content > p:first-of-type{
+  font-size:.88rem;
+  font-weight:bold;
+}
 
 @media screen and (min-width:581px) and (max-width:767px){
   footer{
@@ -100,16 +137,3 @@ form > div::-webkit-scrollbar {display:none}
   }
 }
 
-/* 
-
-#004dc3
-#6c9fe0
-#f54258
-
-
-#17181D
-#292C35
-#E09145
-#FCD9B8
-
-*/
