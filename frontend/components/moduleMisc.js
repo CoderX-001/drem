@@ -32,6 +32,7 @@ export const logout = () => {
 }
 
 const getLogin = () => {
+  let valid = true
   let access
   document.cookie.includes('; ') ? access = document.cookie.split('; ')[1] : access = document.cookie
   
