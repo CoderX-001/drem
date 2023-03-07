@@ -193,12 +193,13 @@
   </div>
 
   <script src="./components/navBar.js"></script>
-  <script src="./components/misc.js"></script>
 
   <script type="module">
     import { isAuthenticated } from './components/moduleMisc.js'
+    import { savePath } from '../components/misc.js'
     const redirectTo = '/pages/dashboard'
 
+    await savePath(location.pathname)
     isAuthenticated(redirectTo)
   </script>
 </body>

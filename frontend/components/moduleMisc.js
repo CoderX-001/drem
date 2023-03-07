@@ -1,26 +1,35 @@
 export const isAuthenticated = (redirect) => {
-  const accessToken = localStorage.getItem('accessToken')
-  const refreshToken = localStorage.getItem('refreshToken')
-  const id = localStorage.getItem('userId')
-  
-  const hiddenToken = document.querySelector('.hidden-token')
-  console.log(hiddenToken)
-  console.log(location.href)
-  console.log(accessToken)
+  const accessToken = localStorage.getItem("accessToken");
+  const refreshToken = localStorage.getItem("refreshToken");
+  const id = localStorage.getItem("userId");
 
-  if (accessToken !== null && refreshToken !== null && id !== null){
-    if (!hiddenToken || hiddenToken.value === null || hiddenToken.value === "" || hiddenToken.value == "undefined") {
-      return location.href = redirect
+  const hiddenToken = document.querySelector(".hidden-token");
+
+  if (accessToken !== null && refreshToken !== null && id !== null) {
+    if (
+      !hiddenToken ||
+      hiddenToken.value === null ||
+      hiddenToken.value === "" ||
+      hiddenToken.value == "undefined"
+    ) {
+      return (window.location.href = redirect);
     }
+  } else if (accessToken === null || refreshToken === null || id === null) {
+    window.addEventListener('load', () => {
+      const path = localStorage.getItem('pathName')
+      console.log(path)
+  
+      if (path !== location.pathname) {
+        return location.href = '/pages/login'
+      }
+    })
   }
-  else if (accessToken === null || refreshToken === null || id === null){
-    let allowedPages = [
-      "https://drem-g2j0.onrender.com/",
-      "https://drem-g2j0.onrender.com/pages/login",
-      "https://drem-g2j0.onrender.com/pages/signup"
-    ]
-    if (!location.href.includes(allowedPages[0]) || !location.href.includes(allowedPages[1])  || !location.href.includes(allowedPages[2])) {
-      return location.href = '/pages/login'
-    }
-  }
+};
+
+export const logout = () => {
+  localStorage.removeItem("accessToken")
+  localStorage.removeItem("refreshToken")
+  localStorage.removeItem("userId")
+
+  return window.location.href = "/"
 }

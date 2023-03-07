@@ -109,8 +109,10 @@
 
   <script type="module">
     import { isAuthenticated } from '../components/moduleMisc.js'
+    import { savePath } from '../components/misc.js'
     const redirectTo = '../pages/dashboard'
 
+    await savePath(location.pathname)
     isAuthenticated(redirectTo)
   </script>
 </body>
