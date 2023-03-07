@@ -6,6 +6,7 @@ export const isAuthenticated = (redirect) => {
   const hiddenToken = document.querySelector('.hidden')
   console.log(hiddenToken)
   console.log(location.href)
+  console.log(accessToken)
 
   if (accessToken !== null && refreshToken !== null && id !== null){
     if (!hiddenToken || hiddenToken.value === null || hiddenToken.value === "" || hiddenToken.value == "undefined") {
