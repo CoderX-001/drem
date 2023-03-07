@@ -84,7 +84,11 @@ const loginFormHandler = async (values, spinner) => {
       }
 
       const data = await loginUserSubmit(url, body)
-      console.log(data.Response.json())
+      data.then(response => {
+        console.log(response)
+      }).then(result => {
+        console.log(result)
+      })
       if (data.valid === false) {
         console.log(data)
         const errorDiv = document.createElement('div')
