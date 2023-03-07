@@ -26,9 +26,10 @@ export const createUserSubmit = async (submitURL, data) => {
   )
 
   if (!createUser.ok) {
-    createUser.json().then(data => {
-      return { valid: false, data }
-    })
+    console.log(createUser.json())
+    const data = await createUser.json()
+    
+    return { valid: false, data }
   }
 
   const response = await createUser.json()
