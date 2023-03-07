@@ -71,6 +71,7 @@
 
   <script type="module">
     import { isAuthenticated, logout, sliderWelcome } from '/components/moduleMisc.js'
+    import { getUserData } from '/components/clientDBrequest.js'
 
     const redirectTo = '/pages/login'
     const slider = document.querySelector('.animated-slide-in')
@@ -79,9 +80,13 @@
     isAuthenticated(redirectTo)
     window.addEventListener('load', () => {
       sliderWelcome(slider)
+      logoutBtn.addEventListener('click', () => { logout() })
+      
+      const dataURL = 'https://api-drem.onrender.com/api/v1/u/get/data'
+      const data = await getUserData(dataURL)
+      
+      console.log(data)
     })
-    
-    logoutBtn.addEventListener('click', () => { logout() })
   </script>
 </body>
 </html>
