@@ -1,5 +1,5 @@
 import { validateLoginForm, validateSignupForm } from './clientFormValidation.js'
-import { checkEmail, createUserSubmit } from './clientDBrequest.js'
+import { checkEmail, createUserSubmit, loginUserSubmit } from './clientDBrequest.js'
 
 const signupForm = document.querySelector('form#signup')
 const loginForm = document.querySelector('form#login')
