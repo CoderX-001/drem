@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage | Drem</title>
   
-  <link rel="shortcut icon" href="./public/images/Ddrem-x-icon (1).png" type="image/x-icon">
+  <link rel="shortcut icon" href="/public/images/Ddrem-x-icon (1).png" type="image/x-icon">
 
-  <link rel="stylesheet" href="./public/css/fontawesome.css">
-  <link rel="stylesheet" href="./public/css/brands.css">
-  <link rel="stylesheet" href="./public/css/solid.css">
-  <link rel="stylesheet" href="./public/css/default.css">
-  <link rel="stylesheet" href="./public/css/styles.css">
-  <link rel="stylesheet" href="./public/css/my-style.css">
+  <link rel="stylesheet" href="/public/css/fontawesome.css">
+  <link rel="stylesheet" href="/public/css/brands.css">
+  <link rel="stylesheet" href="/public/css/solid.css">
+  <link rel="stylesheet" href="/public/css/default.css">
+  <link rel="stylesheet" href="/public/css/styles.css">
+  <link rel="stylesheet" href="/public/css/my-style.css">
 </head>
 <body>
   <!-- Main body container -->
@@ -24,7 +24,7 @@
         <div class="flex flex-shrink-0 font-mono text-2xl font-semibold text-[#6c63ff]">
           <a href="/">
             <!-- <h1>drem</h1> -->
-            <img src="./public/images/Ddrem-logo.png" alt="drem logo" class="border-0 w-8">
+            <img src="/public/images/Ddrem-logo.png" alt="drem logo" class="border-0 w-8">
           </a>
         </div>
 
@@ -40,15 +40,15 @@
         <!-- Navbar for larger screen -->
         <div class="nav-link hidden flex-col w-full items-center absolute top-[4.5rem] left-0 px-16 py-8 bg-[#f54258] lg:flex lg:static lg:flex-row lg:p-0 lg:bg-transparent">
           <div class="w-full flex flex-col text-[.9rem] text-white lg:space-x-[1.5rem] lg:inline-block lg:text-gray-400">
-            <a href="./pages/login" class="mb-6 lg:mb-0 hover:text-[#17181D]">Features</a>
-            <a href="./pages/login" class="mb-6 lg:mb-0 hover:text-[#17181D]">Docs</a>
-            <a href="./pages/login" class="mb-6 lg:mb-0 hover:text-[#17181D]">Pricing</a>
+            <a href="/pages/login" class="mb-6 lg:mb-0 hover:text-[#17181D]">Features</a>
+            <a href="/pages/login" class="mb-6 lg:mb-0 hover:text-[#17181D]">Docs</a>
+            <a href="/pages/login" class="mb-6 lg:mb-0 hover:text-[#17181D]">Pricing</a>
           </div>
           
           <!-- Buttons -->
           <div class="w-full flex flex-col text-[.9rem] text-white lg:flex-row lg:items-center lg:justify-end lg:space-x-[1.5rem]">
-            <a href="./pages/login" class="mb-6 lg:mb-0 lg:text-gray-400 hover:text-[#17181D]">Log in</a>
-            <a href="./pages/signup" class="hover:text-[#17181D] lg:bg-[#f54258] lg:py-2 lg:px-3 lg:rounded lg:shadow lg:hover:bg-[#f54258aa] lg:hover:text-white lg:transition lg:duration-200">Get started</a>
+            <a href="/pages/login" class="mb-6 lg:mb-0 lg:text-gray-400 hover:text-[#17181D]">Log in</a>
+            <a href="/pages/signup" class="hover:text-[#17181D] lg:bg-[#f54258] lg:py-2 lg:px-3 lg:rounded lg:shadow lg:hover:bg-[#f54258aa] lg:hover:text-white lg:transition lg:duration-200">Get started</a>
           </div>
         </div>
       </nav>
@@ -68,7 +68,7 @@
         </div>
         <!-- Add an illustration here (illustration of a person coding with a laptop) -->
         <div class="flex justify-center mt-20 lg:justify-end lg:mt-0">
-          <img src="./public/images/undraw_online_transactions_-02-ka.svg" alt="" class="w-full md:-mt-8 lg:w-10/12">
+          <img src="/public/images/undraw_online_transactions_-02-ka.svg" alt="" class="w-full md:-mt-8 lg:w-10/12">
         </div>
       </div>
 
@@ -174,7 +174,7 @@
       <footer class="bg-[#17181D] text-white mt-20 py-6 rounded flex flex-wrap items-center justify-center gap-y-4 gap-x-7 md:px-12 lg:justify-start">
         <div class="logo text-[#6c63ff] font-semibold">
           <!-- <h1 class="text-xl">drem</h1> -->
-          <img src="./public/images/Ddrem-logo.png" alt="drem logo" class="border-0 w-8">
+          <img src="/public/images/Ddrem-logo.png" alt="drem logo" class="border-0 w-8">
         </div>
         <div class="text-[.9rem] flex items-center gap-x-4">
           <a href="" class="hover:text-[#f54258]">How To</a>
@@ -197,7 +197,7 @@
 
   <script type="module">
     import { isAuthenticated } from './components/moduleMisc.js'
-    const redirectTo = '../pages/login'
+    const redirectTo = '/pages/dashboard'
 
     isAuthenticated(redirectTo)
   </script>
