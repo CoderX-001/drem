@@ -64,7 +64,7 @@ export const getUserData = async (url) => {
       }),
       headers: {
         'Content-Type': 'application/json',
-        'authorization': 'Bearer accessToken'
+        'authorization': `Bearer ${accessToken}`
       }
     }
   )
