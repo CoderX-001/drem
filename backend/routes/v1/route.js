@@ -1,9 +1,12 @@
 // VARIABLES
 import express from 'express'
 
+import { verifyAccessToken } from '../../utils/jwt.js'
+
 import User from '../../models/User.js'
 import createUser from '../../controllers/v1/createUser.js'
 import loginUser from '../../controllers/v1/loginUser.js'
+import getUser from '../../controllers/v1/getUser.js'
 
 const router = express.Router()
 
@@ -21,6 +24,9 @@ router.get('/check/email', async (req, res) => {
 })
 
 router.post('/auth/register', createUser)
+
 router.post('/auth/login', loginUser)
+
+router.get('/u/get/data', verifyAccessToken, getUser)
 
 export default router
