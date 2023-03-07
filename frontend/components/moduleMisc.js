@@ -13,7 +13,7 @@ export const isAuthenticated = (redirect) => {
     }
   }
   else if (accessToken === null || refreshToken === null || id === null){
-    if (location.href !== "/" || location.href !== "/pages/login" || location.href !== "/pages/signup") {
+    if (location.href !== "https://drem-g2j0.onrender.com/" || location.href !== "https://drem-g2j0.onrender.com/pages/login" || location.href !== "https://drem-g2j0.onrender.com/pages/signup") {
       return location.href = '/pages/login'
     }
   }
