@@ -4,6 +4,7 @@ export const isAuthenticated = (redirect) => {
   const id = localStorage.getItem('userId')
   
   const hiddenToken = document.querySelector('.hidden')
+  console.log(hiddenToken)
 
   if (accessToken !== null && refreshToken !== null && id !== null){
     if (!hiddenToken || hiddenToken.value === null || hiddenToken.value === "" || hiddenToken.value == "undefined") {
@@ -11,6 +12,8 @@ export const isAuthenticated = (redirect) => {
     }
   }
   else if (accessToken === null || refreshToken === null || id === null){
-    if (location.href !== "/" || location.href !== "/pages/login" || location.href !== "/pages/signup") return location.href = '/pages/login'
+    if (location.href !== "/" || location.href !== "/pages/login" || location.href !== "/pages/signup") {
+      return location.href = '/pages/login'
+    }
   }
 }
