@@ -50,9 +50,10 @@ export const loginUserSubmit = async (submitURL, data) => {
     }
   )
 
-  if (!response) return false
+  if (!loginUser) return false
   
-  console.log(response)const response = await loginUser.json()
+  console.log(loginUser)
+  const response = await loginUser.json()
 
   return response
 }
