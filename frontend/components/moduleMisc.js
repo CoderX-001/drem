@@ -15,14 +15,12 @@ export const isAuthenticated = (redirect) => {
       return (window.location.href = redirect);
     }
   } else if (accessToken === null || refreshToken === null || id === null) {
-    window.addEventListener('load', () => {
-      const path = localStorage.getItem('pathName')
-      console.log(path)
-  
-      if (path !== location.pathname) {
-        return location.href = '/pages/login'
-      }
-    })
+    const path = localStorage.getItem('pathName')
+    console.log(path)
+
+    if (path !== location.pathname) {
+      return location.href = '/pages/login'
+    }
   }
 };
 
