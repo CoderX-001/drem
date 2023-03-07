@@ -69,12 +69,17 @@
   <script src="../components/main.js" type="module"></script>
 
   <script type="module">
-    import { isAuthenticated, logout } from '../components/moduleMisc.js'
+    import { isAuthenticated, logout, sliderWelcome } from '../components/moduleMisc.js'
 
     const redirectTo = '../pages/login'
+    const slider = document.querySelector('.animated-slide-in')
     const logoutBtn = document.querySelector('.logout')
 
     isAuthenticated(redirectTo)
+    window.addEventListener('load', () => {
+      sliderWelcome(slider)
+    })
+    
     logoutBtn.addEventListener('click', () => { logout() })
   </script>
 </body>
