@@ -60,7 +60,7 @@ export const getUserData = async (url) => {
     {
       method: 'POST',
       body: JSON.stringify({
-        id: userId
+        userId: userId
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -72,6 +72,7 @@ export const getUserData = async (url) => {
   if (!data) return false
   
   const response = await data.json()
+  console.log(response)
   
   return response
 }
