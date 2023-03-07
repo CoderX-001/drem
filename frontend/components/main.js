@@ -326,6 +326,7 @@ const signupFormHandler = async (values, spinner) => {
 
         const data = await createUserSubmit(url, body)
         if (!data) {
+        console.log(data)
         const errorDiv = document.createElement('div')
         const errorMsg = document.createElement('span')
         const errorCancel = document.createElement('i')
@@ -360,6 +361,42 @@ const signupFormHandler = async (values, spinner) => {
         return console.error('Something went wrong!')
       }
 
+      if (data.error) {
+        let n = 0
+        if (spinner && spinner.classList.contains('fa-spin')) {
+          spinner.classList.replace('inline-block', 'hidden')
+          spinner.classList.remove('fa-spin')
+        }
+
+        const errorDiv = document.createElement('div')
+        const errorMsg = document.createElement('span')
+        const errorCancel = document.createElement('i')
+
+        errorCancel.setAttribute('class', 'fa fa-times close')
+        errorMsg.innerHTML = data.error
+        errorDiv.setAttribute('class', 'error px-4 py-2 mb-3 rounded bg-red-400')
+        errorDiv.setAttribute('id', n+1)
+
+        if (errorNumber.indexOf(errorDiv.id) == -1){
+          errorNumber.push(errorDiv.id)
+  
+          errorDiv.appendChild(errorMsg)
+          errorDiv.appendChild(errorCancel)
+  
+          errorContainer.appendChild(errorDiv)
+
+          n++
+        }
+
+        errorCancel.addEventListener('click', () => {
+          errorCancel.parentElement.classList.replace('error', 'hidden')
+          const newList = errorNumber.filter(e => {
+            return e != errorNumber.indexOf(errorCancel.parentElement.id)+1
+          })
+          errorNumber = newList
+        })
+      }
+      else {
         localStorage.setItem('accessToken', `Bearer ${data.accessToken}`)
         localStorage.setItem('refreshToken', `Bearer ${data.refreshToken}`)
         localStorage.setItem('userId', data.userId)
