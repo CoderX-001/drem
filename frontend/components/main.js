@@ -402,7 +402,8 @@ const signupFormHandler = async (values, spinner) => {
         localStorage.setItem('userId', data.userId)
 
         location.href = '../pages/dashboard'
-      
+      }
+      }
     }
     catch(err) {
       throw err
