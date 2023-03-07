@@ -17,7 +17,7 @@ export const createUserSubmit = async (submitURL, data) => {
   const createUser = await fetch(
     submitURL,
     {
-      method: 'GET',
+      method: 'POST',
       body: JSON.stringify(data),
       headers: {
         'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ export const getUserData = async (url) => {
   const data = await fetch(
     url,
     {
-      method: 'POST',
+      method: 'GET',
       body: JSON.stringify({
         userId: userId
       }),
