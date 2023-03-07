@@ -3,7 +3,7 @@ export const isAuthenticated = (redirect) => {
   const refreshToken = localStorage.getItem('refreshToken')
   const id = localStorage.getItem('userId')
   
-  const hiddenToken = document.querySelector('.hidden')
+  const hiddenToken = document.querySelector('.hidden-token')
   console.log(hiddenToken)
   console.log(location.href)
   console.log(accessToken)
