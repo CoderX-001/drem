@@ -25,15 +25,9 @@ export const createUserSubmit = async (submitURL, data) => {
     }
   )
 
-  if (!createUser.ok) {
-    console.log(createUser.json())
-    const data = await createUser.json()
-    
-    return { valid: false, data }
-  }
-  else {
-    const response = await createUser.json()
-  }
+  if (!createUser) return false
+  
+  const response = await createUser.json()
 
   return response
 }
@@ -51,8 +45,6 @@ export const loginUserSubmit = async (submitURL, data) => {
   )
 
   if (!loginUser) return false
-  
-  console.log(loginUser)
   
   const response = await loginUser.json()
 
@@ -77,7 +69,7 @@ export const getUserData = async (url) => {
     }
   )
   
-  if (!data.ok) return false
+  if (!data) return false
   
   const response = await data.json()
   
