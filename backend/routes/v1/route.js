@@ -27,6 +27,6 @@ router.post('/auth/register', createUser)
 
 router.post('/auth/login', loginUser)
 
-router.get('/u/get/data', verifyAccessToken, getUser)
+router.post('/u/get/data', verifyAccessToken, getUser)
 
 export default router

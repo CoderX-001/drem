@@ -58,7 +58,7 @@ export const getUserData = async (url) => {
   const data = await fetch(
     url,
     {
-      method: 'GET',
+      method: 'POST',
       body: JSON.stringify({
         userId: userId
       }),
