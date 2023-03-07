@@ -51,10 +51,8 @@ export const loginUserSubmit = async (submitURL, data) => {
   )
 
   if (!loginUser.ok) {
-    console.log(loginUser.json())
-    const data = await loginUser.json()
-    
-    return { valid: false, data }
+    console.log(loginUser)
+    return { valid: false, loginUser }
   }
   else {
     const response = await loginUser.json()
