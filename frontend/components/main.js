@@ -85,6 +85,7 @@ const loginFormHandler = async (values, spinner) => {
 
       const data = await createUserSubmit(url, body)
       if (data.valid === false) {
+        console.log(data)
         const errorDiv = document.createElement('div')
         const errorMsg = document.createElement('span')
         const errorCancel = document.createElement('i')
