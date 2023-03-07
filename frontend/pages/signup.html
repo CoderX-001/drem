@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create an account | Drem</title>
 
-  <script src="../components/jquery-3.6.0.js" type="module" defer></script>
+  <script src="/components/jquery-3.6.0.js" type="module" defer></script>
 
-  <link rel="stylesheet" href="../public/css/fontawesome.css">
-  <link rel="stylesheet" href="../public/css/brands.css">
-  <link rel="stylesheet" href="../public/css/solid.css">
-  <link rel="stylesheet" href="../public/css/default.css">
-  <link rel="stylesheet" href="../public/css/styles.css">
-  <link rel="stylesheet" href="../public/css/my-style.css">
+  <link rel="stylesheet" href="/public/css/fontawesome.css">
+  <link rel="stylesheet" href="/public/css/brands.css">
+  <link rel="stylesheet" href="/public/css/solid.css">
+  <link rel="stylesheet" href="/public/css/default.css">
+  <link rel="stylesheet" href="/public/css/styles.css">
+  <link rel="stylesheet" href="/public/css/my-style.css">
 </head>
 <body>
   <!-- Main body container -->
@@ -39,9 +39,9 @@
         <!-- Navbar for larger screen -->
         <div class="nav-link hidden flex-col w-full items-center absolute top-[4.5rem] left-0 px-16 py-8 bg-[#f54258] lg:flex lg:static lg:flex-row lg:p-0 lg:bg-transparent">
           <div class="w-full flex flex-col text-[.9rem] text-white lg:space-x-[1.5rem] lg:inline-block lg:text-gray-400">
-            <a href="./pages/login" class="mb-6 lg:mb-0 hover:text-[#17181D]">Features</a>
-            <a href="./pages/login" class="mb-6 lg:mb-0 hover:text-[#17181D]">Docs</a>
-            <a href="./pages/login" class="mb-6 lg:mb-0 hover:text-[#17181D]">Pricing</a>
+            <a href="/pages/login" class="mb-6 lg:mb-0 hover:text-[#17181D]">Features</a>
+            <a href="/pages/login" class="mb-6 lg:mb-0 hover:text-[#17181D]">Docs</a>
+            <a href="/pages/login" class="mb-6 lg:mb-0 hover:text-[#17181D]">Pricing</a>
           </div>
           
           <!-- Buttons -->
@@ -58,10 +58,6 @@
           <div class="w-full h-full flex flex-col items-center overflow-auto py-12 lg:h-[31rem] lg:justify-start">
             <h1 class="text-2xl text-[#6c63ff] mb-6 lg:hidden">Getting Started</h1>
             <div class="errors w-9/12 mb-2">
-              <!-- <div class="error px-4 py-2 mb-5 rounded bg-red-400">
-                <span>Email already exists</span>
-                <i class="fa fa-times close"></i>
-              </div> -->
             </div>
             <div class="w-9/12">
               <div class="relative w-full px-3 py-2 rounded shadow mb-5">
@@ -89,7 +85,7 @@
         </form>
         <div class="bg-[#17181D] hidden w-1/2 h-full py-6 items-center flex-col text-white lg:flex lg:items-start">
           <div class="w-full lg:flex lg:justify-center">
-            <img src="../public/images/undraw_join_re_w1lh.svg" alt="" class="w-[10rem]">
+            <img src="/public/images/undraw_join_re_w1lh.svg" alt="" class="w-[10rem]">
           </div>
           <h1 class="w-full text-2xl text-center text-[#6c63ff] my-6">Welcome to <span class="text-white">drem</span></h1>
           <div class="w-full text-[.9rem] px-11 text-center">
@@ -102,15 +98,15 @@
     </main>
   </div>
 
-  <script src="../components/navBar.js"></script>
-  <script src="../components/forms.js"></script>
+  <script src="/components/navBar.js"></script>
+  <script src="/components/forms.js"></script>
 
-  <script src="../components/main.js" type="module"></script>
+  <script src="/components/main.js" type="module"></script>
 
   <script type="module">
-    import { isAuthenticated } from '../components/moduleMisc.js'
-    import { savePath } from '../components/misc.js'
-    const redirectTo = '../pages/dashboard'
+    import { isAuthenticated } from '/components/moduleMisc.js'
+    import { savePath } from '/components/misc.js'
+    const redirectTo = '/pages/dashboard'
 
     await savePath(location.pathname)
     isAuthenticated(redirectTo)

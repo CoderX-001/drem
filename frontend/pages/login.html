@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>login | Drem</title>
 
-  <link rel="stylesheet" href="../public/css/fontawesome.css">
-  <link rel="stylesheet" href="../public/css/brands.css">
-  <link rel="stylesheet" href="../public/css/solid.css">
-  <link rel="stylesheet" href="../public/css/default.css">
-  <link rel="stylesheet" href="../public/css/styles.css">
-  <link rel="stylesheet" href="../public/css/my-style.css">
+  <link rel="stylesheet" href="/public/css/fontawesome.css">
+  <link rel="stylesheet" href="/public/css/brands.css">
+  <link rel="stylesheet" href="/public/css/solid.css">
+  <link rel="stylesheet" href="/public/css/default.css">
+  <link rel="stylesheet" href="/public/css/styles.css">
+  <link rel="stylesheet" href="/public/css/my-style.css">
 </head>
 <body>
   <!-- Main body container -->
@@ -80,7 +80,7 @@
         </form>
         <div class="bg-[#17181D] hidden w-1/2 h-full py-6 items-center flex-col text-white lg:flex">
           <div class="flex justify-center my-3">
-            <img src="../public/images/undraw_login_re_4vu2.svg" alt="" class="w-1/2">
+            <img src="/public/images/undraw_login_re_4vu2.svg" alt="" class="w-1/2">
           </div>
           <h1 class="text-2xl text-[#6c63ff] my-6">Welcome back</h1>
           
@@ -90,14 +90,14 @@
     </main>
   </div>
 
-  <script src="../components/navBar.js"></script>
-  <script src="../components/forms.js"></script>
+  <script src="/components/navBar.js"></script>
+  <script src="/components/forms.js"></script>
 
-  <script src="../components/main.js" type="module"></script>
+  <script src="/components/main.js" type="module"></script>
 
   <script type="module">
-    import { isAuthenticated } from '../components/moduleMisc.js'
-    import { savePath } from '../components/misc.js'
+    import { isAuthenticated } from '/components/moduleMisc.js'
+    import { savePath } from '/components/misc.js'
     const redirectTo = '/pages/dashboard'
 
     await savePath(location.pathname)
