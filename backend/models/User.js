@@ -28,6 +28,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: false
   },
+  publicKey: {
+    type: String,
+    required: false
+  },
   privateKey: {
     type: String,
     required: false
