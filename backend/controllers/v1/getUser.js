@@ -5,7 +5,7 @@ const getUser = async (req, res) => {
   const { userId } = req.body
   const { id } = req.user
 
-  console.log(req.user)
+  console.log(req.user.id)
 
   if (id !== userId) return res.status(403).json({ error: 'Invalid token!' })
 
