@@ -54,7 +54,7 @@ export const loginUserSubmit = async (submitURL, data) => {
 export const getUserData = async (url, data) => {
   const accessToken = localStorage.getItem('accessToken')
   
-  const data = await fetch(
+  const getData = await fetch(
     url,
     {
       method: 'POST',
