@@ -83,6 +83,7 @@ export const verifyAccessToken = (req, res, next) => {
     const verify = jwt.verify(token, secretKey)
 
     req.user = User.findById(verify.id).select('-password')
+    req.token = token
 
     next()
   }
