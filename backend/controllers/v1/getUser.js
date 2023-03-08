@@ -12,7 +12,15 @@ const getUser = async (req, res) => {
   const findUser = await User.findOne({ _id: id })
   if (!findUser) return res.status(403).json({ error: 'Invalid token' })
 
-  return res.status(200).json(req.user)
+  const user = {
+    name: findUser.name,
+    email: findUser.email,
+    appType: findUser.appType,
+    appName: findUser.appName,
+    publicKey: findUser.publicKey,
+    privateKey: findUser.privateKey
+  }
+  return res.status(200).json(user)
 }
 
 export default getUser
