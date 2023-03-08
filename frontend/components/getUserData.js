@@ -26,7 +26,7 @@ export const getData = async ({
       const name = response.name
       let profileImg
 
-      response.profileImg === 'undefined' || !response.profileImg ? profileImg = 'https://api.dicebear.com/5.x/adventurer-neutral/svg?size=80&radius=50&mouth=variant16&eyes=variant11' : profileImg = response.profileImg
+      response.profileImg === 'undefined' || !response.profileImg ? profileImg = '/public/images/profileImage.svg' || 'https://api.dicebear.com/5.x/adventurer-neutral/svg?size=80&radius=50&mouth=variant16&eyes=variant11' : profileImg = response.profileImg
       
       if (pageTitle) pageTitle += name
 
