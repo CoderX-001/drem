@@ -84,11 +84,13 @@
       
       const dataURL = 'https://api-drem.onrender.com/api/v1/main/u/get/data'
       const id = localStorage.getItem('userId')
+      console.log(id)
       const body = {
         userId: id
       }
       
       const data = await getUserData(dataURL, body)
+      if (!data) return console.log('Something went wrong')
       
       console.log(data)
     })
