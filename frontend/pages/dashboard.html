@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="/public/css/my-style.css">
 </head>
 <body>
-  <div id="preloader" class="block">
+  <div id="preloader" class="w-full h-screen flex items-center justify-center">
     <img src="/public/images/loading-gif.gif" alt="loading. Please wait...">
     <!-- <div class="loader">
       <div class="duo duo1">
@@ -108,8 +108,15 @@
         else {
           const email = response.email
           const name = response.name
+          let profileImg
           console.log(response.appName)
           console.log(response.profileImg)
+          if (response.profileImg === 'undefined') {
+            profileImg = 'https://api.dicebear.com/5.x/adventurer-neutral/svg?size=80&radius=50&mouth=variant16&eyes=variant11'
+          }
+          else {
+            profileImg = response.profileImg
+          }
           
           document.title += name
           addName.forEach(content => {
