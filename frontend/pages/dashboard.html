@@ -104,13 +104,13 @@
 
           response.profileImg === 'undefined' ? profileImg = 'https://api.dicebear.com/5.x/adventurer-neutral/svg?size=80&radius=50&mouth=variant16&eyes=variant11' : profileImg = response.profileImg
           
-          loader.classList.replace('flex', 'hidden')
-          body.classList.replace('hidden', 'block')
-
           document.title += name
           addName.forEach(content => {
             content.innerHTML = name
           })
+
+          loader.classList.replace('flex', 'hidden')
+          body.classList.replace('hidden', 'block')
         }
       }
     }
