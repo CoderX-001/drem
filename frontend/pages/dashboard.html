@@ -54,8 +54,9 @@
           
           <!-- Buttons -->
           <div class="w-fit text-[.9rem] flex flex-col justify-start lg:w-full lg:flex-row lg:items-center lg:justify-end lg:space-x-[1.5rem]">
-            <button class="text-[.9rem] mb-6 text-white hover:text-[#17181D] lg:mb-0 lg:text-[#17181D] lg:hover:text-[#6c63ff]"><i class="fa fa-cog"></i>&nbsp;&nbsp;Settings</button>
             <a href="" class="text-white lg:mb-0 lg:bg-[#f54258] lg:text-white hover:text-[#17181D] lg:rounded lg:py-2 lg:px-3 lg:hover:bg-[#17181D] lg:hover:text-[#6c63ff]"><i class="fa fa-plus hidden lg:inline-block">&nbsp;</i>New project</a>
+            <!-- <button class="text-[.9rem] mb-6 text-white hover:text-[#17181D] lg:mb-0 lg:text-[#17181D] lg:hover:text-[#6c63ff]"><i class="fa fa-cog"></i>&nbsp;&nbsp;Settings</button> -->
+            <button class="text-[.9rem] mb-6 text-white hover:text-[#17181D] lg:mb-0 lg:text-white lg:hover:text-[#6c63ff]"><img src="" class="profileImg border-0">&nbsp;<i class="fa fa-caret-down"></i></button>
             <button class="logout text-[.9rem] text-white mb-6 lg:text-[#ff0000] lg:mb-0 hover:text-[#17181D]">Logout</button>
           </div>
         </div>
@@ -79,7 +80,6 @@
   <script type="module">
     import { isAuthenticated, logout, sliderWelcome } from '/components/moduleMisc.js'
     import { getUserData } from '/components/clientDBrequest.js'
-    import { fadeIn, fadeOut } from './fade-animations'
 
     const redirectTo = '/pages/login'
     const slider = document.querySelector('.animated-slide-in')
@@ -87,6 +87,7 @@
     const id = localStorage.getItem('userId')
 
     const addName = document.querySelectorAll('.addName')
+    const images = document.querySelectorAll('.profileImg')
     const loader = document.querySelector('#preloader')
     const body = document.querySelector('#body')
 
@@ -112,6 +113,9 @@
           document.title += name
           addName.forEach(content => {
             content.innerHTML = name
+          })
+          images.forEach(image => {
+            image.setAttribute('src', profileImg)
           })
 
           $('#preloader').fadeOut("slow").removeClass('flex').addClass('hidden')
