@@ -83,7 +83,12 @@
       logoutBtn.addEventListener('click', () => { logout() })
       
       const dataURL = 'https://api-drem.onrender.com/api/v1/main/u/get/data'
-      const data = await getUserData(dataURL)
+      const id = localStorage.getItem('userId')
+      const body = {
+        userId: id
+      }
+      
+      const data = await getUserData(dataURL, body)
       
       console.log(data)
     })
