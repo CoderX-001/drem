@@ -37,7 +37,7 @@ export const signPrivateKey = (user) => {
   const payload = user
   const secretKey = process.env.PRIVATE_KEY_CHECK_TOKEN
 
-  const options = {issuer: 'drem.com'}
+  const options = { issuer: 'drem.com' }
 
   const privateKey = jwt.sign(payload, secretKey, options)
   if (!privateKey) return res.status(500).json({ error: 'Something went wrong. Try again!' })
@@ -50,7 +50,7 @@ export const verifyPrivateKey = (req, res, next) => {
   let token;
 
   if (!req.headers['private-key']) return res.status(403).json({ error: 'Cannot access without token' })
-  
+
   const bearerHeader = req.headers['private-key']
   const bearerToken = bearerHeader.split(' ')
   token = bearerToken[1]
@@ -62,7 +62,7 @@ export const verifyPrivateKey = (req, res, next) => {
 
     next()
   }
-  catch(err) {
+  catch (err) {
     throw err
   }
 
@@ -74,20 +74,22 @@ export const verifyAccessToken = (req, res, next) => {
   let token;
 
   if (!req.headers['authorization']) return res.status(403).json({ error: 'Cannot access without token' })
-  
+
   const bearerHeader = req.headers['authorization']
   const bearerToken = bearerHeader.split(' ')
   token = bearerToken[1]
 
   try {
-    const verify = jwt.verify(token, secretKey)
+    if (token) {
+      const verify = jwt.verify(token, secretKey)
 
-    req.user = User.findById(verify.id).select('-password')
-    req.token = token
+      req.user = User.findById(verify.id).select('-password')
+      req.token = token
 
-    next()
+      next()
+    }
   }
-  catch(err) {
+  catch (err) {
     throw err
   }
 
