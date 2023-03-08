@@ -61,7 +61,7 @@ export const getUserData = async (submitURL, data) => {
       body: JSON.stringify(data),
       headers: {
         'Content-Type': 'application/json',
-        'authorization': 'Bearer ' + accessToken
+        'authorization': accessToken
       }
     }
   )

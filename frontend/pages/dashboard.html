@@ -79,13 +79,13 @@
     const id = localStorage.getItem('userId')
 
     isAuthenticated(redirectTo)
+
     const getData = async () => {
       if (id !== null) {
         const dataURL = 'https://api-drem.onrender.com/api/v1/main/u/get/data'
         const data = {
           userId: id
         }
-        console.log(JSON.stringify(data))
         const response = await getUserData(dataURL, data)
         if (!response) {
           console.log('Error!')
