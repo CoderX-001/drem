@@ -17,13 +17,11 @@ const loginUser = async (req, res) => {
     if (!verify) return res.status(401).json({ error: 'Invalid login credentials!' })
 
     const user = {
-      id: findUser._id,
-      email: findUser.email,
-      name: findUser.name
+      id: findUser._id
     }
   
-    const accessToken = await signAccessToken(user.id)
-    const refreshToken = await signRefreshToken(user.id)
+    const accessToken = await signAccessToken(user)
+    const refreshToken = await signRefreshToken(user)
   
     if (!accessToken || !refreshToken) return res.status(500).json({ error: 'Something went wrong. Try again!' })
 
