@@ -75,7 +75,6 @@
   <script type="module">
     import { isAuthenticated, logout, sliderWelcome } from '/components/moduleMisc.js'
     import { getUserData } from '/components/clientDBrequest.js'
-    import { fadeIn, fadeOut } from 'fade-animations'
 
     const redirectTo = '/pages/login'
     const slider = document.querySelector('.animated-slide-in')
@@ -105,9 +104,9 @@
 
           response.profileImg === 'undefined' ? profileImg = 'https://api.dicebear.com/5.x/adventurer-neutral/svg?size=80&radius=50&mouth=variant16&eyes=variant11' : profileImg = response.profileImg
           
-          fadeOut(loader)
-          fadeIn(body)
-          
+          loader.classList.replace('flex', 'hidden')
+          body.classList.replace('hidden', 'block')
+
           document.title += name
           addName.forEach(content => {
             content.innerHTML = name
