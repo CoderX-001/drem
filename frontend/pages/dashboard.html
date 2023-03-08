@@ -125,12 +125,19 @@
         images
       }
 
-      if (getData(getDataOptions)) {
-        $('#preloader').fadeOut("slow").removeClass('flex').addClass('hidden')
-        $('#body').fadeIn("slow").removeClass('hidden').addClass('block')
-        
-        sliderWelcome(slider)
-      }
+      getData(getDataOptions)
+      .then(data => {
+        if (data.valid === true) {
+          document.title += data.name
+          if (document.title.length > 12) {
+            $('#preloader').fadeOut("slow").removeClass('flex').addClass('hidden')
+            $('#body').fadeIn("slow").removeClass('hidden').addClass('block')
+            
+            sliderWelcome(slider)
+          }
+        }
+        else {console.log('Error! Something went wrong!')}
+      })
       
       logoutBtn.forEach(logoutBtn => {
         logoutBtn.addEventListener('click', () => { logout() })

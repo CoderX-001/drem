@@ -69,7 +69,6 @@ export const getUserData = async (submitURL, data) => {
   if (!getData) return false
   
   const response = getData.json()
-  console.log(response)
   
   return response
 }
