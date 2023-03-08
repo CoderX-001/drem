@@ -58,7 +58,7 @@
     <main class="container mx-auto mt-0 px-8 py-6 lg:px-16">
       <div class="animated-slide-in welcome-content right bg-[#6c63ff] text-white relative">
         <i class="fa fa-times"></i>
-        <p>Welcome, </p>
+        <p>Welcome, <span class="addName"></span></p>
         <p class="text-[.75rem]">Let's start working</p>
       </div>
       <input type="hidden" class="hidden-token" value="61e9833b">
@@ -78,6 +78,8 @@
     const logoutBtn = document.querySelector('.logout')
     const id = localStorage.getItem('userId')
 
+    const addName = document.querySelectorAll('.addName')
+
     isAuthenticated(redirectTo)
 
     const getData = async () => {
@@ -91,7 +93,13 @@
           console.log('Error!')
         }
         else {
-          console.log(response.email)
+          const email = response.email
+          const name = response.name
+          
+          document.title += name
+          addName.forEach(content => {
+            content.innerHTML = name
+          })
         }
       }
       else {
