@@ -75,6 +75,7 @@
   <script type="module">
     import { isAuthenticated, logout, sliderWelcome } from '/components/moduleMisc.js'
     import { getUserData } from '/components/clientDBrequest.js'
+    import { fadeIn, fadeOut } from 'fade-animations'
 
     const redirectTo = '/pages/login'
     const slider = document.querySelector('.animated-slide-in')
@@ -82,6 +83,8 @@
     const id = localStorage.getItem('userId')
 
     const addName = document.querySelectorAll('.addName')
+    const loader = document.querySelector('#preloader')
+    const body = document.querySelector('#body')
 
     isAuthenticated(redirectTo)
 
@@ -99,23 +102,17 @@
           const email = response.email
           const name = response.name
           let profileImg
-          console.log(response.appName)
-          console.log(response.profileImg)
-          if (response.profileImg === 'undefined') {
-            profileImg = 'https://api.dicebear.com/5.x/adventurer-neutral/svg?size=80&radius=50&mouth=variant16&eyes=variant11'
-          }
-          else {
-            profileImg = response.profileImg
-          }
+
+          response.profileImg === 'undefined' ? profileImg = 'https://api.dicebear.com/5.x/adventurer-neutral/svg?size=80&radius=50&mouth=variant16&eyes=variant11' : profileImg = response.profileImg
+          
+          fadeOut(loader)
+          fadeIn(body)
           
           document.title += name
           addName.forEach(content => {
             content.innerHTML = name
           })
         }
-      }
-      else {
-        console.log('wrong!')
       }
     }
     

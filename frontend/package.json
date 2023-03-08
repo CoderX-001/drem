@@ -10,6 +10,7 @@
   "author": "coderx001",
   "license": "ISC",
   "dependencies": {
+    "fade-animations": "^1.2.1",
     "tailwindcss": "^3.2.7"
   }
 }
