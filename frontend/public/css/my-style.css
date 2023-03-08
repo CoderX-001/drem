@@ -130,10 +130,57 @@ form > div::-webkit-scrollbar {display:none}
   font-size:.88rem;
   font-weight:bold;
 }
+.options-subcontent{
+  top:5.2rem;
+  right:1.5rem;
+  width:10rem;
+  height:16rem;
+  padding:.8rem .2rem;
+  transition:all .3s ease;
+}
+.options-subcontent:not(.inactive) > div > a,
+.options-subcontent:not(.inactive) > div > h3{
+  padding-right:.8rem;
+  padding-left:.8rem;
+}
+.options-subcontent:not(.inactive) > div > a{
+  padding-top:.3rem;
+  padding-bottom:.3rem;
+}
+.options-subcontent:not(.inactive) > div > button{
+  margin-left:.8rem;
+  margin-right:.8rem;
+}
+.options-subcontent:not(.inactive) > div > a:hover{
+  background-color:#fff;
+}
+.options-subcontent:not(.inactive):after{
+  content:"";
+  position:absolute;
+  top:-1rem;
+  right:3.8rem;
+  width: 0; 
+  height: 0; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 15px solid rgb(241 245 249 / var(--tw-bg-opacity));
+}
+.options-subcontent.inactive{
+  width:0;
+  height:0;
+  padding:0;
+}
+.options-subcontent.inactive > button,
+.options-subcontent.inactive > div{
+  display:none;
+}
 
 @media screen and (min-width:581px) and (max-width:767px){
   footer{
     padding:0 6rem;
   }
+}
+@media screen and (max-width:1023px){
+  .options-subcontent{display:none}
 }
 
