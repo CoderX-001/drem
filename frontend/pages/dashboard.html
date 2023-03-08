@@ -114,8 +114,8 @@
             content.innerHTML = name
           })
 
-          $('#preloader').fadeOut("slow")
-          $('#body').fadeIn("slow")
+          $('#preloader').fadeOut("slow").removeClass('flex').addClass('hidden')
+          $('#body').fadeIn("slow").removeClass('hidden').addClass('block')
         }
       }
     }
