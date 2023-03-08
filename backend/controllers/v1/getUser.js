@@ -6,7 +6,7 @@ const getUser = async (req, res) => {
 
   console.log(req.headers['authorization'])
 
-  const findUser = await User.findOne({ _id: id })
+  const findUser = await User.findOne({ _id: userId })
   if (!findUser) return res.status(403).json({ error: 'Invalid token' })
 
   const user = {
