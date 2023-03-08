@@ -55,6 +55,8 @@ export const getUserData = async (url) => {
   const userId = localStorage.getItem('userId')
   const accessToken = localStorage.getItem('accessToken')
   
+  console.log(accessToken)
+  
   const data = await fetch(
     url,
     {
