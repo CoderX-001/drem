@@ -51,11 +51,11 @@ export const loginUserSubmit = async (submitURL, data) => {
   return response
 }
 
-export const getUserData = async (url, data) => {
+export const getUserData = async (submitURL, data) => {
   const accessToken = localStorage.getItem('accessToken')
   
   const getData = await fetch(
-    url,
+    submitURL,
     {
       method: 'POST',
       body: JSON.stringify(data),
