@@ -4,7 +4,7 @@ import User from "../../models/User.js"
 const getUser = async (req, res) => {
   const { userId } = req.body
 
-  console.log(req.headers['authorization'])
+  console.log(req.token)
 
   const findUser = await User.findOne({ _id: userId })
   if (!findUser) return res.status(403).json({ error: 'Invalid token' })
