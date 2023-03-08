@@ -6,14 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard&nbsp;|&nbsp;</title>
 
-  <script src="/components/jquery-3.6.0.js" type="module" defer></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 
+  <link rel="stylesheet" href="https://unpkg.com/fade-animations/dist/index.min.css">
+  <script src="https://unpkg.com/fade-animations/dist/index.min.js"></script>
+  
   <link rel="stylesheet" href="/public/css/fontawesome.css">
   <link rel="stylesheet" href="/public/css/brands.css">
   <link rel="stylesheet" href="/public/css/solid.css">
   <link rel="stylesheet" href="/public/css/default.css">
   <link rel="stylesheet" href="/public/css/styles.css">
   <link rel="stylesheet" href="/public/css/my-style.css">
+
 </head>
 <body>
   <div id="preloader" class="w-full h-screen flex items-center justify-center">
@@ -75,6 +79,7 @@
   <script type="module">
     import { isAuthenticated, logout, sliderWelcome } from '/components/moduleMisc.js'
     import { getUserData } from '/components/clientDBrequest.js'
+    import { fadeIn, fadeOut } from 'fade-animations'
 
     const redirectTo = '/pages/login'
     const slider = document.querySelector('.animated-slide-in')
@@ -109,8 +114,8 @@
             content.innerHTML = name
           })
 
-          loader.classList.replace('flex', 'hidden')
-          body.classList.replace('hidden', 'block')
+          fadeOut(loader)
+          fadeIn(body)
         }
       }
     }
