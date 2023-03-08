@@ -1,7 +1,7 @@
 // VARIABLES
 import User from "../../models/User.js"
 
-const getUser = async () => {
+const getUser = async (req, res) => {
   const { userId } = req.body
   const { id } = req.user
 
