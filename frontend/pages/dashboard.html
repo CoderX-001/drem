@@ -85,12 +85,12 @@
         const data = {
           userId: id
         }
-        const data = await getUserData(dataURL, data)
-        if (!data) {
+        const response = await getUserData(dataURL, data)
+        if (!response) {
           console.log('Error!')
         }
         else {
-          console.log(data)
+          console.log(response)
         }
       }
       else {
