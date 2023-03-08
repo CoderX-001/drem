@@ -52,7 +52,7 @@ export const loginUserSubmit = async (submitURL, data) => {
 }
 
 export const getUserData = async (submitURL, data) => {
-  const accessToken = localStorage.getItem('accessToken')
+  let accessToken = localStorage.getItem('accessToken')
   
   const getData = await fetch(
     submitURL,
@@ -61,14 +61,14 @@ export const getUserData = async (submitURL, data) => {
       body: JSON.stringify(data),
       headers: {
         'Content-Type': 'application/json',
-        'authorization': `Bearer ${accessToken}`
+        'authorization': 'Bearer ' + accessToken
       }
     }
   )
   
   if (!getData) return false
   
-  const response = await getData
+  const response = getData
   console.log(response)
   
   return response
