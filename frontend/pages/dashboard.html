@@ -108,7 +108,7 @@
           const name = response.name
           let profileImg
 
-          response.profileImg === 'undefined' ? profileImg = 'https://api.dicebear.com/5.x/adventurer-neutral/svg?size=80&radius=50&mouth=variant16&eyes=variant11' : profileImg = response.profileImg
+          response.profileImg === 'undefined' || !response.profileImg ? profileImg = 'https://api.dicebear.com/5.x/adventurer-neutral/svg?size=80&radius=50&mouth=variant16&eyes=variant11' : profileImg = response.profileImg
           
           document.title += name
           addName.forEach(content => {
