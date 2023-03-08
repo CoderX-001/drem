@@ -78,6 +78,7 @@
     const logoutBtn = document.querySelector('.logout')
 
     isAuthenticated(redirectTo)
+    console.log(getUserData)
     window.addEventListener('load', async () => {
       const dataURL = 'https://api-drem.onrender.com/api/v1/main/u/get/data'
       const id = localStorage.getItem('userId')
