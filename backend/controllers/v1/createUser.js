@@ -22,13 +22,11 @@ const createUser = async (req, res) => {
   })
 
   const user = {
-    id: newUser._id,
-    email: newUser.email,
-    name: newUser.name
+    id: newUser._id
   }
 
-  const accessToken = await signAccessToken(user.id)
-  const refreshToken = await signRefreshToken(user.id)
+  const accessToken = await signAccessToken(user)
+  const refreshToken = await signRefreshToken(user)
 
   if (!accessToken || !refreshToken) return res.status(500).json({ error: 'Something went wrong. Try again!' })
 
