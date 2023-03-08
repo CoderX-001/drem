@@ -85,6 +85,7 @@
         const data = {
           userId: id
         }
+        console.log(JSON.stringify(data))
         const response = await getUserData(dataURL, data)
         if (!response) {
           console.log('Error!')
