@@ -27,8 +27,8 @@ const createUser = async (req, res) => {
     name: newUser.name
   }
 
-  const accessToken = await signAccessToken(user)
-  const refreshToken = await signRefreshToken(user)
+  const accessToken = await signAccessToken(user.id)
+  const refreshToken = await signRefreshToken(user.id)
 
   if (!accessToken || !refreshToken) return res.status(500).json({ error: 'Something went wrong. Try again!' })
 
