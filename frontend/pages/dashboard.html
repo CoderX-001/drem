@@ -79,13 +79,23 @@
 
     isAuthenticated(redirectTo)
     window.addEventListener('load', async () => {
+      const dataURL = 'https://api-drem.onrender.com/api/v1/main/u/get/data'
+      const id = localStorage.getItem('userId')
+      console.log(id)
+      const body = {
+        userId: id
+      }
+      
+      const data = await getUserData(dataURL, body)
+      if (!data) {
+        console.log('Something went wrong')
+      }
+      else {
+        console.log(data.json())
+      }
+      
       sliderWelcome(slider)
       logoutBtn.addEventListener('click', () => { logout() })
-      
-      const dataURL = 'https://api-drem.onrender.com/api/v1/main/u/get/data'
-      const data = await getUserData(dataURL)
-      
-      console.log(data)
     })
   </script>
 </body>

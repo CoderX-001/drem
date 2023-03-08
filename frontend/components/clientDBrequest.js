@@ -51,17 +51,14 @@ export const loginUserSubmit = async (submitURL, data) => {
   return response
 }
 
-export const getUserData = async (url) => {
-  const userId = localStorage.getItem('userId')
+export const getUserData = async (url, data) => {
   const accessToken = localStorage.getItem('accessToken')
   
-  const data = await fetch(
+  const getData = await fetch(
     url,
     {
       method: 'POST',
-      body: JSON.stringify({
-        userId: userId
-      }),
+      body: JSON.stringify(data),
       headers: {
         'Content-Type': 'application/json',
         'authorization': `Bearer ${accessToken}`
@@ -69,9 +66,9 @@ export const getUserData = async (url) => {
     }
   )
   
-  if (!data) return false
+  if (!getData) return false
   
-  const response = await data.json()
+  const response = await getData
   console.log(response)
   
   return response
