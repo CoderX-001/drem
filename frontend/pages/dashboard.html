@@ -76,12 +76,12 @@
     const redirectTo = '/pages/login'
     const slider = document.querySelector('.animated-slide-in')
     const logoutBtn = document.querySelector('.logout')
+    const dataURL = 'https://api-drem.onrender.com/api/v1/main/u/get/data'
+    const id = localStorage.getItem('userId')
 
     isAuthenticated(redirectTo)
     console.log(getUserData)
     window.addEventListener('load', async () => {
-      const dataURL = 'https://api-drem.onrender.com/api/v1/main/u/get/data'
-      const id = localStorage.getItem('userId')
       console.log(id)
       const body = {
         userId: id
