@@ -2,13 +2,13 @@ import jwt from 'jsonwebtoken'
 import User from '../models/User.js'
 
 export const signAccessToken = (user) => {
-  const payload = user.id
+  const payload = user
   const secretKey = process.env.ACCESS_TOKEN
 
   const options = {
     expiresIn: '1y',
     issuer: 'drem.com',
-    audience: [user.id],
+    audience: [user],
   }
 
   const accessToken = jwt.sign(payload, secretKey, options)
