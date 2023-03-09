@@ -46,38 +46,38 @@
   
         <!-- Navbar for larger screen -->
         <div class="nav-link hidden flex-col w-full items-start absolute top-[4.5rem] left-0 px-12 py-8 bg-white shadow lg:flex lg:static lg:flex-row lg:items-center lg:p-0 lg:shadow-none">
-          <div class="w-fit flex flex-col text-[.9rem] text-[#17181D] lg:w-full lg:items-center lg:space-x-[1.5rem] lg:flex-row lg:text-gray-400">
+          <div class="w-fit flex flex-col text-base text-[#17181D] lg:w-full lg:items-center lg:space-x-[1.5rem] lg:flex-row lg:text-gray-400">
             <a href="/pages/login" class="mb-6 lg:mb-0 hover:text-[#f54258]">Features</a>
             <a href="/pages/login" class="mb-6 lg:mb-0 hover:text-[#f54258]">Docs</a>
             <a href="/pages/login" class="mb-6 lg:mb-0 hover:text-[#f54258]">Pricing</a>
           </div>
           
           <!-- Buttons -->
-          <div class="w-fit text-[.9rem] flex flex-col justify-start lg:w-full lg:flex-row lg:items-center lg:justify-end lg:space-x-[1.5rem]">
-            <a href="" class="text-[#17181D] mb-6 lg:mb-0 lg:bg-[#f54258] lg:text-white hover:text-[#f54258] lg:rounded lg:py-2 lg:px-3 lg:hover:bg-[#17181D] lg:hover:text-[#6c63ff]"><i class="fa fa-plus hidden lg:inline-block">&nbsp;</i>New project</a>
-            <a href="" class="flex items-center text-[#17181D] text-[.9rem] hover:text-[#f54258] mb-6 lg:hidden">
+          <div class="w-fit text-base flex flex-col justify-start lg:w-full lg:flex-row lg:items-center lg:justify-end lg:space-x-[1.5rem]">
+            <a href="" class="text-[#17181D] text-[.9rem] mb-6 lg:mb-0 lg:bg-[#f54258] lg:text-white lg:rounded lg:py-2 lg:px-3 lg:hover:bg-[#17181D]"><i class="fa fa-plus hidden lg:inline-block">&nbsp;</i>New project</a>
+            <a href="" class="flex items-center text-[#17181D] text-base hover:text-[#f54258] mb-6 lg:hidden">
               <img src="" class="profileImg border-0 w-6">&nbsp;
               <span class="addName"></span>
             </a>
-            <button class="logout text-[.9rem] text-[#17181D] hover:text-[#ff0000] hover:font-semibold text-left lg:hidden">Logout</button>
+            <button class="logout text-base text-[#17181D] hover:text-[#ff0000] hover:font-semibold text-left lg:hidden">Sign out&nbsp;<i class="fa fa-sign-out-alt"></i></button>
 
             <!-- For larger screens -->
-            <button id="menu-dropdown" class="text-[.9rem] mb-6 hidden text-white items-center lg:flex lg:mb-0 lg:text-[#17181D]">
+            <button id="menu-dropdown" class="text-base mb-6 hidden text-white items-center lg:flex lg:mb-0 lg:text-[#17181D]">
               <img src="" class="profileImg border-0 w-8">&nbsp;
               <i class="fa fa-caret-down"></i>
             </button>
             <!-- Menu options -->
             <div class="inactive options-subcontent flex flex-col divide-y-2 divide-[#17181D] text-[.8rem] bg-slate-100 absolute rounded shadow">
               <div class="flex flex-col pb-4">
-                <h3 class="fixed-width font-semibold">Signed in as <span class="addName"></span></h3>
+                <h3 class="fixed-width font-semibold">Signed in as <span class="addName font-bold"></span></h3>
               </div>
-              <div class="flex flex-col py-4">
+              <div class="flex flex-col py-1">
                 <a href="" class="mb-2">Your Profile</a>
                 <a href="" class="mb-2">Your Projects</a>
                 <a href="">Help</a>
               </div>
-              <div class="py-4 text-[.8rem]">
-                <button class="logout text-white text-left lg:text-[#ff0000] hover:font-semibold">Logout</button>
+              <div class="py-2 text-[.8rem]">
+                <button data-size="large" class="logout relative w-4/5 text-[#ff0000] font-medium text-left py-[3px] rounded hover:font-semibold hover:pl-2 hover:text-white">Sign out&nbsp;<i class="fa fa-sign-out-alt"></i></button>
               </div>
             </div>
           </div>
@@ -146,6 +146,12 @@
       menu.addEventListener('click', () => {
         menuOptions.classList.toggle('inactive')
       })
+
+      setTimeout(() => {
+        if (document.title.length <= 12) {
+          logout()
+        }
+      }, 30000)
     })
   </script>
 </body>

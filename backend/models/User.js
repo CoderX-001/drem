@@ -20,12 +20,8 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  appType: {
-    type: String,
-    required: false
-  },
-  appName: {
-    type: String,
+  projects: {
+    type: Array,
     required: false
   },
   publicKey: {

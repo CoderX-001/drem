@@ -52,10 +52,10 @@ export const sliderWelcome = (element) => {
   setTimeout(() => {
     element.classList.add('active')
   }, 800)
-  
-  element.addEventListener('click', () => {
+
+  document.body.addEventListener('click', () => {
     element.classList.remove('active')
-  })
+  }, false)
   
   document.cookie = "logged_in=true; path=/"
 }

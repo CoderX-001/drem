@@ -654,6 +654,10 @@ video {
   margin-top: 3rem;
 }
 
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .mt-20 {
   margin-top: 5rem;
 }
@@ -728,6 +732,10 @@ video {
 
 .w-1\/2 {
   width: 50%;
+}
+
+.w-4\/5 {
+  width: 80%;
 }
 
 .w-5 {
@@ -966,11 +974,6 @@ video {
   padding-bottom: 0.75rem;
 }
 
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -984,6 +987,11 @@ video {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.py-\[3px\] {
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .pb-0 {
@@ -1027,6 +1035,11 @@ video {
   line-height: 2rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-\[\.75rem\] {
   font-size: .75rem;
 }
@@ -1043,6 +1056,11 @@ video {
   font-size: .9rem;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1051,6 +1069,10 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .font-medium {
@@ -1069,6 +1091,10 @@ video {
   text-transform: lowercase;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .text-\[\#17181D\] {
   --tw-text-opacity: 1;
   color: rgb(23 24 29 / var(--tw-text-opacity));
@@ -1082,6 +1108,11 @@ video {
 .text-\[\#f54258\] {
   --tw-text-opacity: 1;
   color: rgb(245 66 88 / var(--tw-text-opacity));
+}
+
+.text-\[\#ff0000\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 0 0 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -1150,6 +1181,10 @@ video {
 
 .hover\:fill-current:hover {
   fill: currentColor;
+}
+
+.hover\:pl-2:hover {
+  padding-left: 0.5rem;
 }
 
 .hover\:font-semibold:hover {
@@ -1346,14 +1381,14 @@ video {
     padding-top: 4rem;
   }
 
+  .lg\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
   .lg\:text-\[\#17181D\] {
     --tw-text-opacity: 1;
     color: rgb(23 24 29 / var(--tw-text-opacity));
-  }
-
-  .lg\:text-\[\#ff0000\] {
-    --tw-text-opacity: 1;
-    color: rgb(255 0 0 / var(--tw-text-opacity));
   }
 
   .lg\:text-gray-400 {
