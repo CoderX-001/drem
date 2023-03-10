@@ -9,11 +9,8 @@ const conn = (url) => {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     dbName: 'dremAPI'
-  }, (err, success) => {
-    if (err) throw err
-  
-    if (success) console.log('Database connected...')
-  })
+  }).then(() => console.log('Database connected...'))
+  .catch(err => console.error(err))
 }
 
 
