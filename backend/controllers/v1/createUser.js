@@ -30,7 +30,7 @@ const createUser = async (req, res) => {
   const refreshToken = await signRefreshToken(user)
   const privateKey = await signPrivateKey(user)
 
-  if (!accessToken || !refreshToken) return res.status(500).json({ error: 'Something went wrong. Try again!' })
+  if (!accessToken || !refreshToken || !privateKey) return res.status(500).json({ error: 'Something went wrong. Try again!' })
 
   newUser.accessToken = accessToken
   newUser.refreshToken = refreshToken
