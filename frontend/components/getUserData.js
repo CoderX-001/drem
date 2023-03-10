@@ -2,7 +2,6 @@ import { getUserData } from '/components/clientDBrequest.js'
 
 export const getData = async ({
   id,
-  pageTitle,
   emailFill,
   nameFill,
   images
@@ -25,7 +24,10 @@ export const getData = async ({
     else {
       const email = response.email
       const name = response.name
+      const privateKey = response.privateKey
       let profileImg
+
+      console.log(response)
 
       response.profileImg === 'undefined' || !response.profileImg ? profileImg = '/public/images/profileImage.svg' || 'https://api.dicebear.com/5.x/adventurer-neutral/svg?size=80&radius=50&mouth=variant16&eyes=variant11' : profileImg = response.profileImg
 

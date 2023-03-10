@@ -16,6 +16,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  profileImg: {
+    type: String,
+    required: false
+  },
   refreshToken: {
     type: String,
     required: true
@@ -26,11 +30,11 @@ const UserSchema = new mongoose.Schema({
   },
   publicKey: {
     type: String,
-    required: false
+    required: true
   },
   privateKey: {
     type: String,
-    required: false
+    required: true
   }
 })
 

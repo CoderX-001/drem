@@ -41,7 +41,7 @@ const createUser = async (req, res) => {
 
   if (!saveUser) return res.status(500).json({ error: 'Something went wrong. Try again!' })
 
-  return res.status(201).json({ accessToken, refreshToken, userId: user.id })
+  return res.status(201).json({ userId: user.id })
 
 }
 

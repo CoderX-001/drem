@@ -12,6 +12,8 @@ const getUser = async (req, res) => {
   const user = {
     name: findUser.name,
     email: findUser.email,
+    accessToken: findUser.accessToken,
+    refreshToken: findUser.refreshToken,
     appType: findUser.appType,
     appName: findUser.appName,
     publicKey: findUser.publicKey,
