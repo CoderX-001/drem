@@ -37,7 +37,7 @@ export const signPrivateKey = (user) => {
   const payload = user
   const secretKey = process.env.PRIVATE_KEY_CHECK_TOKEN
 
-  const options = { issuer: 'drem.com' }
+  const options = { expires: '1y', issuer: 'drem.com' }
 
   const privateKey = jwt.sign(payload, secretKey, options)
   if (!privateKey) return res.status(500).json({ error: 'Something went wrong. Try again!' })

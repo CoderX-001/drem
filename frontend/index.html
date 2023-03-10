@@ -92,16 +92,16 @@
               <span class="list mb-2 lg:mb-0">2</span>
               <div>
                 <p class="max-w-[40rem] text-lg lg:ml-3">
-                  Generate your api key. Api keys contains informations about a specific user, such as <i class="text-[.85rem]">the developer who owns the access token</i>, <i class="text-[.85rem]">the type of app the developer owns</i> and other information which helps us to make the API easy-to-use for you.
+                  Generate your app key. App keys contains informations about an application, such as <i class="text-[.85rem]">the developer who owns the app</i>, <i class="text-[.85rem]">the type of app (e-commerce, e-learning, blog, etc.)</i> and other information which helps us to make the API easy-to-use for you.
                 </p>
-                <p class="max-w-[40rem] text-lg mt-3 lg:ml-3">To create an access token, you have to specify the type of app you want to create and the environment you want to work with (development or production).</p>
+                <p class="max-w-[40rem] text-lg mt-3 lg:ml-3">To create an app key, you have to specify the type of app you want to create and the environment you want to work with (development or production).</p>
               </div>
             </div>
             <div class="flex flex-col lg:flex-row lg:items-start">
               <span class="list mb-2 lg:mb-0">3</span>
               <div>
                 <p class="max-w-[40rem] text-lg lg:ml-3">
-                  Once you have generated your api key, you can now access the api from your frontend without having to create a backend server for your backend work.
+                  Once you have generated your app key, you can now access the api from your frontend without having to create a backend server for your backend work.
                 </p>
               </div>
             </div>
@@ -140,8 +140,8 @@
     }),
     <code class="js-var">headers</code>: {
       <code class="js-attr">'Content-Type'</code>: 'application/json',
-      <code class="js-attr">'authorization'</code>: 'Bearer <code class="italic js-str">&lt;developer's accessToken&gt;</code>'
-      <code class="js-attr">'public-key'</code>: 'Bearer <code class="italic js-str">&lt;application's publicKey&gt;</code>'
+      <code class="js-attr">'authorization'</code>: 'Bearer <code class="italic js-str">&lt;developer's private key&gt;</code>'
+      <code class="js-attr">'app-key'</code>: 'Bearer <code class="italic js-str">&ltapplication's api Key&gt;</code>'
     }
   }
 )
@@ -174,8 +174,8 @@
       <code class="js-str">categories</code>: ['politics'] <code class="js-comm">// Categories of the post (optional), can be more than one</code>
     },
     <code class="js-var">headers</code>: {
-      <code class="js-str">authorization</code>: 'Bearer <i><code class="js-comm">&lt;developer's access token&gt;</code></i>'
-      <code class="js-str">public-key</code>: 'Bearer <i><code class="js-comm">&lt;application's publicKey&gt;</code></i>',
+      <code class="js-str">authorization</code>: 'Bearer <i><code class="js-comm">&lt;developer's private key&gt;</code></i>'
+      <code class="js-str">app-key</code>: 'Bearer <i><code class="js-comm">&lt;application's api key&gt;</code></i>',
     },
     <code class="js-var">success</code>: <code class="js-rw">function</code>(data, status, xhr) { <code class="js-comm">// callback function for when request is successful</code>
       <code class="js-comm">// do something</code>

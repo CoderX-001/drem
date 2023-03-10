@@ -156,6 +156,7 @@ const loginFormHandler = async (values, spinner) => {
         })
       }
       else {
+        sessionStorage.setItem('userType', 'old')
         localStorage.setItem('accessToken', `Bearer ${data.accessToken}`)
         localStorage.setItem('refreshToken', `Bearer ${data.refreshToken}`)
         localStorage.setItem('userId', data.userId)
@@ -397,6 +398,7 @@ const signupFormHandler = async (values, spinner) => {
         })
       }
       else {
+        sessionStorage.setItem('userType', 'new')
         localStorage.setItem('accessToken', `Bearer ${data.accessToken}`)
         localStorage.setItem('refreshToken', `Bearer ${data.refreshToken}`)
         localStorage.setItem('userId', data.userId)

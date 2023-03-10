@@ -24,6 +24,7 @@ export const isAuthenticated = (redirect) => {
 };
 
 export const logout = () => {
+  sessionStorage.removeItem('userType')
   localStorage.removeItem("accessToken")
   localStorage.removeItem("refreshToken")
   localStorage.removeItem("userId")

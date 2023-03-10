@@ -1,8 +1,9 @@
 // VARIABLES
 import bcrypt from 'bcryptjs'
+import crypto from 'crypto'
 
 import User from '../../models/User.js'
-import { signAccessToken, signRefreshToken } from '../../utils/jwt.js'
+import { signAccessToken, signPrivateKey, signRefreshToken } from '../../utils/jwt.js'
 
 const createUser = async (req, res) => {
   const { name, email, password } = req.body
@@ -27,11 +28,14 @@ const createUser = async (req, res) => {
 
   const accessToken = await signAccessToken(user)
   const refreshToken = await signRefreshToken(user)
+  const privateKey = await signPrivateKey(user)
 
   if (!accessToken || !refreshToken) return res.status(500).json({ error: 'Something went wrong. Try again!' })
 
   newUser.accessToken = accessToken
   newUser.refreshToken = refreshToken
+  newUser.publicKey = crypto.randomBytes(10).toString('hex')
+  newUser.privateKey = privateKey
 
   const saveUser = await newUser.save()
 
